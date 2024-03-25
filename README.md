@@ -25,12 +25,6 @@ React Tasks é uma aplicação de lista de tarefas desenvolvida com React, que c
 - [React](https://react.dev/learn)
 - [Visual Studio Code](https://code.visualstudio.com)
 
-## 🧑🏻‍💻 Interface
-<div style="flex-direction: row;justify-content: space-between;">
-    <img src="https://github.com/BrunaDev/React_Tasks/assets/72671246/e3bf6228-c5dd-49cf-8696-9e9119eff583" style="width: 400px; height: auto;">
-    <img src="https://github.com/BrunaDev/React_Tasks/assets/72671246/eaa66c07-a753-473b-8644-03d8217f8055" style="width: 420px; height: auto;">
-</div>
-
 ### :small_blue_diamond: Licença
 - [MIT](https://github.com/BrunaDev/React_Tasks/blob/main/LICENSE)
 
