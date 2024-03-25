@@ -6,12 +6,6 @@
   <img src="https://img.shields.io/static/v1?label=IDE&message=VsCode&color=9acd32&style=plastic"/>
 </p>
 
-<<<<<<< HEAD
-Pontos a melhorar:
-- Deixar o detail da tarefa editável; ✅
-- Manter as tarefas salvas ao dar f5 na página; ✅
-- Salvar as tasks em um txt, para o usuario não perder as tarefas ao sair.
-=======
 # 🗒️ React Tasks
 
 React Tasks é uma aplicação de lista de tarefas desenvolvida com React, que capacita os usuários a adicionar, excluir e marcar suas tarefas como concluídas, além de permitir a descrição de cada uma. Os dados são armazenados no localStorage do navegador, garantindo que não sejam perdidos ao fechar a página, exceto se o cache for limpo.
@@ -32,8 +26,7 @@ React Tasks é uma aplicação de lista de tarefas desenvolvida com React, que c
 </div>
 
 ### :small_blue_diamond: Licença
-- [MIT](https://github.com/BrunaDev/React_Tasks/blob/main/LICENSE)
+- [MIT](https://github.com/BrunaDev/React_Tasks/blob/main/.github/LICENSE)
 
 
 ###### Criado para fins de estudos.
->>>>>>> 59dd7b1d99dae330f35a48b68bbc160988f30ea8
