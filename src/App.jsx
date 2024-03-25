@@ -27,26 +27,30 @@ const App = () => {
 
       return task;
     });
+    localStorage.setItem('tasks', JSON.stringify(newTasks));
+
     setTasks(newTasks);
   };
 
   const handleTaskAddition = (taskTitle) => {
-    const newTasks = [... tasks, {
-      title: taskTitle,
-      id: uuiv4(),
-      completed: false,
-      description: taskDescription
-    },]
-    setTasks(newTasks);
+    if (taskTitle.trim() !== "") {
+      const newTasks = [... tasks, {
+        title: taskTitle,
+        id: uuiv4(),
+        completed: false,
+        description: "",
+      },]
+      setTasks(newTasks);
 
-    localStorage.setItem('tasks', JSON.stringify(newTasks));
+      localStorage.setItem('tasks', JSON.stringify(newTasks));
+    } else {
+      return
+    }
   }
 
   const handleTaskDeletion = (taskId) => {
     const newTasks = tasks.filter((task) => task.id !== taskId);
-    const taskToDelete = tasks.find((task) => task.id === taskId); 
-
-    localStorage.removeItem(`task-${taskToDelete.title}`);
+    localStorage.setItem('tasks', JSON.stringify(newTasks));
     setTasks(newTasks);
   };
 
