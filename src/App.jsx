@@ -10,7 +10,15 @@ import Header from './components/header/Header';
 import TaskDetails from './components/detail/TaskDetails';
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    try {
+      const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+      return storedTasks || [];
+    } catch (error) {
+      console.error('Error parsing tasks from Local Storage:', error);
+      return [];
+    }
+  });
   const [taskDescription, setTaskDescription] = useState("");
 
   const handleTaskClick = (taskId) => {
@@ -32,12 +40,16 @@ const App = () => {
     },]
 
     setTasks(newTasks);
+
+    localStorage.setItem('tasks', JSON.stringify(newTasks));
   }
 
   const handleTaskDeletion = (taskId) => {
     const newTasks = tasks.filter(task => task.id !== taskId)
 
     setTasks(newTasks);
+
+    localStorage.setItem('tasks', JSON.stringify(newTasks));
   }
 
   const handleTaskDescriptionChange = (newDescription) => {
