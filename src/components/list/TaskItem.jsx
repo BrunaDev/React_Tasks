@@ -1,5 +1,5 @@
 import React from "react";
-import { CgClose, CgInfo } from 'react-icons/cg';
+import { CgClose, CgInfo, CgCheck } from 'react-icons/cg';
 import { useNavigate } from 'react-router-dom';
 
 import '../list/TaskItem.css'
@@ -14,8 +14,9 @@ const TaskItem = ({ task, handleTaskClick, handleTaskDeletion }) => {
     return (
         <div
             className="task-container"
-            style={task.completed ? {borderLeft: '6px solid #CCA9DD'} : {} }
+            style={task.completed ? {borderLeft: '16px solid #CCA9DD'} : {} }
         >
+            {task.completed && <CgCheck className="check-icon" />}
             <div className="task-title" onClick={() => handleTaskClick(task.id)}>
                 {task.title}
             </div>

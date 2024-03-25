@@ -45,12 +45,12 @@ const App = () => {
   }
 
   const handleTaskDeletion = (taskId) => {
-    const newTasks = tasks.filter(task => task.id !== taskId)
-
+    const newTasks = tasks.filter((task) => task.id !== taskId);
+    const taskToDelete = tasks.find((task) => task.id === taskId); 
+    
+    localStorage.removeItem(`task-${taskToDelete.title}`);
     setTasks(newTasks);
-
-    localStorage.setItem('tasks', JSON.stringify(newTasks));
-  }
+  };
 
   const handleTaskDescriptionChange = (newDescription) => {
     setTaskDescription(newDescription);
