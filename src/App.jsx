@@ -10,18 +10,8 @@ import Header from './components/header/Header';
 import TaskDetails from './components/detail/TaskDetails';
 
 const App = () => {
-  const [tasks, setTasks] = useState([
-    {
-      id: '1',
-      title: 'Estudar React',
-      completed: false
-    },
-    {
-      id: '2',
-      title: 'Estudar Docker-Compose',
-      completed: true
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
+  const [taskDescription, setTaskDescription] = useState("");
 
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map((task) => {
@@ -37,7 +27,8 @@ const App = () => {
     const newTasks = [... tasks, {
       title: taskTitle,
       id: uuiv4(),
-      completed: false
+      completed: false,
+      description: taskDescription
     },]
 
     setTasks(newTasks);
@@ -48,6 +39,10 @@ const App = () => {
 
     setTasks(newTasks);
   }
+
+  const handleTaskDescriptionChange = (newDescription) => {
+    setTaskDescription(newDescription);
+  };
 
   return (
     <BrowserRouter>
@@ -68,7 +63,7 @@ const App = () => {
               </>
             }
           />
-          <Route path='/:taskTitle' exact element={<TaskDetails/>} />
+          <Route path='/:taskTitle' exact element={<TaskDetails handleTaskDescriptionChange={handleTaskDescriptionChange} />} />
         </Routes>
         </div>
     </BrowserRouter>
