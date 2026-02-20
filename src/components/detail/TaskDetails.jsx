@@ -18,7 +18,7 @@ const TaskDetails = () => {
 
     useEffect(() => {
         localStorage.setItem(`task-${params.taskTitle}`, taskDescription);
-    }, [taskDescription]); 
+    }, [taskDescription, params.taskTitle]); 
     
     const handleBackButtonClick = () => {
         navigate("/");

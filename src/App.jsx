@@ -19,11 +19,11 @@ const App = () => {
       return [];
     }
   });
-  const [taskDescription, setTaskDescription] = useState("");
+  const [, setTaskDescription] = useState("");
 
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map((task) => {
-      if(task.id === taskId) return {... task, completed: !task.completed}
+      if(task.id === taskId) return {...task, completed: !task.completed}
 
       return task;
     });
@@ -34,7 +34,7 @@ const App = () => {
 
   const handleTaskAddition = (taskTitle) => {
     if (taskTitle.trim() !== "") {
-      const newTasks = [... tasks, {
+      const newTasks = [...tasks, {
         title: taskTitle,
         id: uuiv4(),
         completed: false,
