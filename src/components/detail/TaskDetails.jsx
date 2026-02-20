@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import TextField from '@material-ui/core/TextField';
+import TextField from '@mui/material/TextField';
 
 import Button from "../buttons/Button";
 
